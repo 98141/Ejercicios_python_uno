@@ -43,3 +43,27 @@ else:
     print(f"{nombre}, no se puede realizar la división entera por cero.\n")
 
 print(f"¡Gracias por utilizar el programa de operaciones matemáticas, {nombre}!")
+
+"""
+Validacion de datos
+"""
+print(f"\n{nombre} Ahora vamos a verificar los tipos de datos.\n")
+
+entero = int(input("Introduce un número entero: "))
+print(f"El valor ingresado es: {entero}, y su tipo es: {type(entero)}\n")
+
+flotante = float(input("Introduce un número flotante: "))
+print(f"El valor ingresado es: {flotante}, y su tipo es: {type(flotante)}\n")
+
+real = float(input("Introduce la parte real del número complejo: "))
+imaginario = float(input("Introduce la parte imaginaria del número complejo: "))
+complejo = complex(real, imaginario)
+print(f"El número complejo ingresado es: {complejo}, y su tipo es: {type(complejo)}\n")
+
+texto = input("Introduce una cadena de texto (puede ser tu nombre o cualquier cosa): ")
+print(f"El valor ingresado es: {texto}, y su tipo es: {type(texto)}\n")
+
+num1 = int(input("Introduce un primer número para comparar: "))
+num2 = int(input("Introduce un segundo número para comparar: "))
+comparacion = num1 == num2
+print(f"La comparación {num1} == {num2} es: {comparacion} (Booleano, True o False)\n")
