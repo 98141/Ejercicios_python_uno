@@ -40,4 +40,4 @@ while True:
             print(f"Resultado: {division(num1, num2)}")
     else:
         print("Opción no válida. Intente de nuevo.")
-# Fin del código
+# Fin del código esperar cambios de definicion
