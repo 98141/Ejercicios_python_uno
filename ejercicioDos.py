@@ -1,28 +1,54 @@
-"""Prueba del ejercicio dos de python"""
+class Contacto:
 
-print ("Calculo de un area geometrica")
-print ("Selecciona el numero de la operacion que deseas realizar")
-print ("1. Area de un circulo")
-print ("2. Area de un cuadrado")   
-print ("3. Area de un rectangulo")
+    def __init__(self, nombre, telefono):
+        self.nombre = nombre
+        self.telefono = telefono
+    
+def mostrarMenu():
+    print("\nAgenda de Contactos")
+    print("1. Agregar contacto")
+    print("2. Mostrar contactos")
+    print("3. Buscar contacto")
+    print("4. Eliminar contacto")
+    print("5. Salir\n")
 
-pi = 3.1416
+Contactos = []
 
-opcion = int(input("Opcion: "))
-if opcion == 1:
-    radio = float(input("Ingrese el valor del radio: "))
-    area = pi * (radio ** 2)
-    print (f"El area del circulo es: {area}")
-elif opcion == 2:
-    lado = float(input("Ingrese el valor de la longitud de un lado: "))
-    area = lado ** 2
-    print (f"El area del rectangulo es: {area}")
-elif opcion == 3:
-    longitu = float(input("Ingrese la longitud: "))
-    ancho = float(input("Ingrese el ancho: "))
-    area = longitu * ancho
-    print (f"El area del circulo es: {area}")
-else:
-    print ("Opcion invalida")
-
-print ("Fin del programa\n")
+while True:
+    mostrarMenu()
+    opcion = input("Seleccione una opción (1-5): ")
+    if opcion == '5':
+        print("Saliendo de la agenda.")
+        break
+    if opcion in ['1', '2', '3', '4']:
+        if opcion == '1':
+            nombre = input("Ingrese el nombre del contacto: ")
+            telefono = input("Ingrese el telefono del contacto: ")
+            nuevo_contacto = Contacto(nombre, telefono)
+            Contactos.append(nuevo_contacto)
+            print(f"Contacto {nombre} agregado.")
+        elif opcion == '2':
+            print("Lista de contactos:")
+            for contacto in Contactos:
+                print(contacto)
+        elif opcion == '3':
+            nombre_buscar = input("Ingrese el nombre del contacto a buscar: ")
+            encontrado = False
+            for contacto in Contactos:
+                if contacto.nombre.lower() == nombre_buscar.lower():
+                    print(contacto)
+                    encontrado = True
+                    break
+            if not encontrado:
+                print(f"Contacto {nombre_buscar} no encontrado.")
+        elif opcion == '4':
+            nombre_eliminar = input("Ingrese el nombre del contacto a eliminar: ")
+            for contacto in Contactos:
+                if contacto.nombre.lower() == nombre_eliminar.lower():
+                    Contactos.remove(contacto)
+                    print(f"Contacto {nombre_eliminar} eliminado.")
+                    break
+            else:
+                print(f"Contacto {nombre_eliminar} no encontrado.")
+    else:
+        print("Opción no válida. Intente de nuevo.")
