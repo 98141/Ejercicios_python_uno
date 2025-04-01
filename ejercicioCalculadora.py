@@ -4,21 +4,6 @@ def suma (a, b):
 def resta (a, b):
     return a - b
 
-def multiplicacion (a, b):
-    return a * b
-
-def division (a, b):
-    if b == 0:
-        return "Error: Division by zero"
-    return a / b
-
-def mostarMenu():
-    print("\nCalculadora basica")
-    print("1. Sumar")
-    print("2. Restar")
-    print("3. Multiplicar")
-    print("4. Dividir")
-    print("5. Salir\n")
 
 while True:
     mostarMenu()
