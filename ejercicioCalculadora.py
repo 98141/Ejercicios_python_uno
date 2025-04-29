@@ -23,6 +23,7 @@ while True:
             print(f"Resultado: {multiplicacion(num1, num2)}")
         elif opcion == '4':
             print(f"Resultado: {division(num1, num2)}")
+            
     else:
         print("Opción no válida. Intente de nuevo.")
 # Fin del código esperar cambios de definicion
